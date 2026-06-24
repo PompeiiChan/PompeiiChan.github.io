@@ -18,9 +18,10 @@
       <a class="nav-link" href="portfolio.html#opensource">开源</a>
       <a class="nav-link" href="portfolio.html#writing">文章</a>
     </div>
-    <div class="lang-switch">
-      <button class="lang-btn active">中</button>
-      <button class="lang-btn">EN</button>
+    <div class="nav-lang">
+      <button class="nav-lang-btn is-active">中</button>
+      <span class="nav-lang-sep">/</span>
+      <button class="nav-lang-btn">EN</button>
     </div>
   </div>
 </nav>
@@ -43,10 +44,10 @@
 
 <script>
 // 语言切换
-document.querySelectorAll('.lang-btn').forEach(btn => {
+document.querySelectorAll('.nav-lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('.nav-lang-btn').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
     showToast('语言切换功能开发中...');
   });
 });

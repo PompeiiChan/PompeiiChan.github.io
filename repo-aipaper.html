@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 论文可视化解读 · AIpaper-explanation — Pompeii</title>
+<title>AI 论文解读 · Paper Explainer — Pompeii</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <link rel="stylesheet" href="onepage.css">
 </head>
 <body>
@@ -12,57 +13,203 @@
 <nav>
   <div class="nav-content">
     <a href="index.html" class="nav-logo">Pompeii</a>
+    <div class="nav-links">
+      <a href="#background">项目背景</a>
+      <a href="#features">核心特性</a>
+      <a href="#workflow">工作流程</a>
+      <a href="#tech">技术架构</a>
+    </div>
     <a href="portfolio.html#opensource" class="nav-back">← 返回作品集</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <h1 class="fade-in">AI 论文可视化解读</h1>
-  <p class="hero-subtitle fade-in">AIpaper-explanation · 开源</p>
-  <div class="hero-tags fade-in">
-    <span class="hero-tag">LLM</span>
-    <span class="hero-tag">文档解析</span>
-    <span class="hero-tag">可视化</span>
-  </div>
+  <h1 class="fade-in">AI 论文解读</h1>
+  <p class="hero-subtitle fade-in">AIpaper-explanation</p>
   <p class="hero-description fade-in">
-    将 AI 论文拆解为结构化图文说明，降低阅读门槛。
+    帮产品经理、运营和业务负责人读懂 AI 论文。<br>
+    把论文解读从「学术摘要」变成可决策的产品材料：先讲旧方案为什么不行，再讲突破，最后落到业务机会和选型建议。
   </p>
+  <div class="fade-in">
+    <a href="https://github.com/PompeiiChan/AIpaper-explanation" target="_blank" rel="noopener" class="cta-button">查看 GitHub</a>
+    <a href="#background" class="cta-button secondary">了解项目</a>
+  </div>
 </section>
 
-<!-- 前端运行界面截图占位（待补充） -->
-<section style="padding:0 22px 40px;max-width:980px;margin:0 auto;">
-  <figure class="screenshot-placeholder">
-    <div class="shot-frame">
-      <span class="shot-icon">🖼️</span>
-      <span class="shot-hint">前端运行界面截图</span>
-      <span class="shot-sub">待补充 · 建议放项目真实运行截图</span>
+<!-- 前端运行界面（macOS 窗口，图片较长可在窗口内滚动查看） -->
+<section style="padding:0 0 40px;max-width:980px;margin:0 auto;">
+  <div class="mac-window">
+    <div class="mac-titlebar">
+      <div class="mac-dots"><span class="mac-dot red"></span><span class="mac-dot yellow"></span><span class="mac-dot green"></span></div>
+      <span class="mac-title">AI 论文解读 · HTML 研报</span>
     </div>
-    <figcaption>产品运行界面预览（截图待补充，替换此占位区域即可）</figcaption>
-  </figure>
+    <div class="mac-viewport">
+      <img src="images/aipaper-screenshot.png" alt="AI 论文解读 · HTML 研报运行界面">
+    </div>
+  </div>
 </section>
 
-<!-- 项目背景（内容待补充） -->
+<!-- 项目背景 -->
 <section class="section-dark" id="background">
   <h2 class="section-title fade-in">项目背景</h2>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item fade-in">
+      <h3>现状问题</h3>
+      <p>
+        AI 论文里有大量公式、实验表格和工程术语，非算法背景的产品同学很难快速判断「这项技术为什么重要」。
+        如果只做逐段翻译，读者仍然不知道它解决了什么业务问题、适合什么产品场景、接入成本有多高。
+      </p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>解决方案</h3>
+      <p>
+        用户提供论文 PDF、本地文本或论文 URL 后，Skill 先理解论文内容，再按固定叙事框架重写成面向 PM 的解读：
+        先讲旧方案为什么不行，再讲新方案怎么突破，最后落到业务机会、接入成本和选型建议。对抽象技术点，
+        系统会生成内联 SVG 图，把难懂概念变成可视化对比或流程图，并最终交付单文件 HTML 研报。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 核心特性 -->
+<section id="features">
+  <h2 class="section-title fade-in">核心特性</h2>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📖</div>
+      <h3>五阶段叙事</h3>
+      <p>把论文从摘要、方法、实验和结论重新组织成产品经理能读懂的故事线，而不是简单复述论文摘要。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">💡</div>
+      <h3>生活类比</h3>
+      <p>用生活类比解释抽象技术概念，减少公式和术语对非技术读者的理解门槛。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🖼️</div>
+      <h3>内联 SVG 图</h3>
+      <p>自动为关键概念生成对比图、流程图或模块图，让读者先看懂结构，再读细节。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🎯</div>
+      <h3>业务落点</h3>
+      <p>报告结尾补充业务场景、接入成本、风险边界和选型建议，帮助判断「能不能用、值不值得用」。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📦</div>
+      <h3>单文件 HTML 研报</h3>
+      <p>输出单文件研报，包含统一配色、关键数字卡片、结论高亮块、风险提示和内联图表，适合分享和展示。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 工作流程 -->
+<section class="section-dark" id="workflow">
+  <h2 class="section-title fade-in">工作流程</h2>
+
+  <div class="workflow-container fade-in">
+    <div class="mermaid">
+flowchart TD
+    A[📄 输入论文 PDF / 文本 / URL] --> B[🔍 提取正文与关键结论]
+    B --> C[🧱 构建五阶段叙事框架]
+    C --> D[🎨 识别 2-3 个视觉锚点]
+    D --> E[✍️ 生成通俗解读 + 内联 SVG]
+    E --> F[📦 输出莫兰迪风格 HTML 研报]
+    F --> G[🎯 产品判断 / 团队分享 / 技术选型]
+
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#e8f5e9
+    style E fill:#fce4ec
+    style F fill:#b3e5fc
+    style G fill:#c8e6c9
+    </div>
+  </div>
+</section>
+
+<!-- 技术架构 -->
+<section id="tech">
+  <h2 class="section-title fade-in">技术架构</h2>
+
   <div class="op-prose fade-in">
-    <p>📝 这是一个开源项目的 One Page 详情页占位。后续 Pompeii 会提供对应的 Markdown 文档，再往此处补充完整内容。</p>
+    <p><strong>技术栈：</strong>Codex / Agent Skill、Markdown Prompt 模板、SVG、HTML/CSS、PyPDF2、WebFetch / WebSearch 工具依赖。</p>
+    <p><strong>架构亮点：</strong></p>
+    <ul>
+      <li>将论文解读拆成三个独立 Prompt 模块：<code>narrative.md</code> 负责叙事，<code>visual.md</code> 负责图表规则，<code>html_style.md</code> 负责最终报告样式。</li>
+      <li><code>SKILL.md</code> 明确了从内容获取、论文理解、视觉锚点识别到 HTML 交付的完整工作流，便于在 Claude Code、Cursor、Trae 或其他 Agent IDE 中复用。</li>
+      <li>叙事框架固定为 Phase 0-4，强制回答「是什么、旧方案为什么不行、核心突破是什么、实验证明了什么、对产品业务意味着什么」，避免模型只复述论文摘要。</li>
+      <li>图表生成不依赖外部图片 API，而是直接输出 SVG 代码，保证图表清晰、可编辑、可内联进 HTML。</li>
+      <li>HTML 样式通过组件化规范控制，包括 <code>stat-cards</code>、<code>insight-box</code>、<code>warning-box</code>、对比表格和图表容器，保证不同论文输出有一致阅读体验。</li>
+      <li>文件管理规范提前约定报告、图片和 prompt 记录路径，为后续批量生成、归档和复盘留出空间。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 项目进展 -->
+<section class="section-dark">
+  <h2 class="section-title fade-in">项目进展</h2>
+
+  <div class="op-prose fade-in">
+    <p>当前项目已沉淀一套可复用的论文解读 Skill，并提供 DeepSeek-R1 示例来展示完整链路。</p>
+    <p>已实现的能力：定义了 <code>paper-explainer</code> Skill，可被支持 Skill / Agent 的 IDE 调用；提供了 DeepSeek-R1 论文文本片段示例、HTML 报告样例和 SVG 图表示例，README 中包含报告预览图，展示最终研报的视觉形态。</p>
+    <p>待补充：真实用户使用数据、线上 Demo 地址、更多论文样例、批量生成脚本和稳定的自动化验收方式。</p>
+  </div>
+
+  <div class="op-link-center fade-in">
+    <a class="op-github" href="https://github.com/PompeiiChan/AIpaper-explanation" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.7 2.6 1.2.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+      PompeiiChan/AIpaper-explanation
+    </a>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section>
+  <h2 class="section-title fade-in">Roadmap</h2>
+
+  <div class="op-prose fade-in">
+    <ul>
+      <li>增加更多论文示例，覆盖推理模型、RAG、多模态、Agent、评测方法等常见 AI 产品主题。</li>
+      <li>补充一键运行脚本或 CLI，把「输入论文 → 输出 HTML」从 Agent 指令变成可重复执行的命令。</li>
+      <li>建立报告质量 checklist，检查是否讲清旧方案痛点、核心突破、业务场景、风险和选型建议。</li>
+      <li>增加公开 Demo 页面或 GitHub Pages，让读者不用本地打开文件也能看到最终报告效果。</li>
+      <li>支持输出不同版本：产品经理版、投资人版、工程落地版和团队分享版。</li>
+    </ul>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
   <div class="footer-links">
+    <a href="https://github.com/PompeiiChan/AIpaper-explanation" target="_blank" rel="noopener">GitHub</a>
     <a href="portfolio.html#opensource">返回作品集</a>
   </div>
-  <p class="copyright">AI 论文可视化解读 · AIpaper-explanation — Pompeii</p>
+  <p class="copyright">AI 论文解读 · Paper Explainer — Pompeii · AI 产品经理</p>
 </footer>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' } });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const id = this.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+  });
+});
 </script>
 
 </body>

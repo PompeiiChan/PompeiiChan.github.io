@@ -18,9 +18,10 @@
       <a class="nav-link" href="#opensource" data-nav="opensource">开源</a>
       <a class="nav-link" href="#writing" data-nav="writing">文章</a>
     </div>
-    <div class="lang-switch">
-      <button class="lang-btn active">中</button>
-      <button class="lang-btn">EN</button>
+    <div class="nav-lang">
+      <button class="nav-lang-btn is-active">中</button>
+      <span class="nav-lang-sep">/</span>
+      <button class="nav-lang-btn">EN</button>
     </div>
   </div>
 </nav>
@@ -86,12 +87,6 @@
       </div>
       <h3 class="work-title">智能投研 Agent</h3>
       <p class="work-desc">面向券商投研场景，设计 1 主 3 子 Agent 架构，支持问股、问数、热点、财报等任务分流。</p>
-      <div class="work-tags">
-        <span class="work-tag">Agent 架构</span>
-        <span class="work-tag">RAG</span>
-        <span class="work-tag">意图识别</span>
-        <span class="work-tag">评测体系</span>
-      </div>
       <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
     </a>
 
@@ -104,12 +99,6 @@
       </div>
       <h3 class="work-title">智能客服 Agent</h3>
       <p class="work-desc">基于会话状态、意图识别与知识库检索，提升客服问答的一次性闭环率，减少误转人工。</p>
-      <div class="work-tags">
-        <span class="work-tag">CICC</span>
-        <span class="work-tag">多轮对话</span>
-        <span class="work-tag">RAG</span>
-        <span class="work-tag">路由策略</span>
-      </div>
       <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
     </a>
 
@@ -122,12 +111,6 @@
       </div>
       <h3 class="work-title">投研信息阅读助手</h3>
       <p class="work-desc">支持研报、年报、纪要等长文档解析，通过结构化分块、摘要生成与来源溯源，提升信息阅读效率。</p>
-      <div class="work-tags">
-        <span class="work-tag">文档解析</span>
-        <span class="work-tag">RAG</span>
-        <span class="work-tag">摘要生成</span>
-        <span class="work-tag">Citation</span>
-      </div>
       <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
     </a>
 
@@ -140,12 +123,6 @@
       </div>
       <h3 class="work-title">营销合规审核助手</h3>
       <p class="work-desc">面向券商营销物料审核场景，结合规则引擎与大模型能力，支持合规风险识别、审核节点配置与人工复核流转。</p>
-      <div class="work-tags">
-        <span class="work-tag">规则引擎</span>
-        <span class="work-tag">大模型</span>
-        <span class="work-tag">合规识别</span>
-        <span class="work-tag">人工复核</span>
-      </div>
       <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
     </a>
   </div>
@@ -160,73 +137,49 @@
   <div class="grid">
     <a class="repo-card" href="repo-aipaper.html">
       <div class="repo-card-top">
-        <span class="repo-domain">AI 论文 · 可视化</span>
+        <span class="repo-domain">论文可视化拆解</span>
         <span class="repo-ext" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
         </span>
       </div>
-      <h3 class="repo-title">AI 论文可视化解读</h3>
-      <div class="repo-name">AIpaper-explanation</div>
-      <p class="repo-desc">将 AI 论文拆解为结构化图文说明，降低阅读门槛。</p>
-      <div class="repo-tags">
-        <span class="repo-tag">LLM</span>
-        <span class="repo-tag">文档解析</span>
-        <span class="repo-tag">可视化</span>
-      </div>
+      <h3 class="repo-title">Agent skills：AIpaper-explanation</h3>
+      <p class="repo-desc">论文再硬核，一看就懂。</p>
       <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
     </a>
 
     <a class="repo-card" href="repo-voxradar.html">
       <div class="repo-card-top">
-        <span class="repo-domain">用户洞察 · NLP</span>
+        <span class="repo-domain">用户洞察与分析</span>
         <span class="repo-ext" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
         </span>
       </div>
-      <h3 class="repo-title">用户调研与舆情分析</h3>
-      <div class="repo-name">VoxRadar-1.0</div>
-      <p class="repo-desc">面向用户反馈与舆情文本的分析工具，用于提取主题、情绪与关键洞察。</p>
-      <div class="repo-tags">
-        <span class="repo-tag">用户研究</span>
-        <span class="repo-tag">NLP</span>
-        <span class="repo-tag">数据分析</span>
-      </div>
+      <h3 class="repo-title">Product: VoxRadar-1.0</h3>
+      <p class="repo-desc">用户反馈，一目了然。</p>
       <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
     </a>
 
-    <a class="repo-card" href="repo-tidesignal.html">
+    <a class="repo-card" href="repo-goalslice.html">
       <div class="repo-card-top">
-        <span class="repo-domain">投资研究 · RAG</span>
+        <span class="repo-domain">AI 成长伙伴</span>
         <span class="repo-ext" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
         </span>
       </div>
-      <h3 class="repo-title">智能投研项目</h3>
-      <div class="repo-name">TideSignal-InvestmentResearch</div>
-      <p class="repo-desc">面向投研场景的 AI 产品原型，支持信息聚合、问答分析与投资研究辅助。</p>
-      <div class="repo-tags">
-        <span class="repo-tag">RAG</span>
-        <span class="repo-tag">投研场景</span>
-        <span class="repo-tag">Agent</span>
-      </div>
+      <h3 class="repo-title">Product：GoalSlice-就这</h3>
+      <p class="repo-desc">大目标拆成小步子，AI 陪你每天走一步。</p>
       <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
     </a>
 
     <a class="repo-card" href="repo-promptpilot.html">
       <div class="repo-card-top">
-        <span class="repo-domain">Prompt 工程 · 人机协同</span>
+        <span class="repo-domain">人机协同的 Prompt 工程</span>
         <span class="repo-ext" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
         </span>
       </div>
-      <h3 class="repo-title">人机协同 Prompt 工程</h3>
-      <div class="repo-name">PromptPilot</div>
-      <p class="repo-desc">人机协同驾驭 Prompt 工程，支持 Prompt 设计、评估与持续优化的 human-in-the-loop 工作流。</p>
-      <div class="repo-tags">
-        <span class="repo-tag">Prompt 工程</span>
-        <span class="repo-tag">人机协同</span>
-        <span class="repo-tag">评估体系</span>
-      </div>
+      <h3 class="repo-title">Agent：Prompt pilot</h3>
+      <p class="repo-desc">设计、评估、迭代——正是 Prompt 工程的完整闭环。</p>
       <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
     </a>
   </div>
@@ -240,7 +193,7 @@
   </div>
   <div class="essays">
     <div class="grid">
-      <a class="essay-featured" href="#" target="_blank" rel="noopener">
+      <a class="essay-featured" href="https://www.woshipm.com/ai/6311216.html" target="_blank" rel="noopener">
         <div class="essay-tags">
           <span class="essay-tag">AI 产品</span>
           <span class="essay-tag">产品思考</span>
@@ -252,7 +205,7 @@
           <span class="essay-read">阅读 <span class="essay-arrow">→</span></span>
         </div>
       </a>
-      <a class="essay-featured" href="#" target="_blank" rel="noopener">
+      <a class="essay-featured" href="https://www.woshipm.com/ai/6271561.html" target="_blank" rel="noopener">
         <div class="essay-tags">
           <span class="essay-tag">Agent</span>
           <span class="essay-tag">Function Call</span>
@@ -266,7 +219,7 @@
       </a>
     </div>
     <div class="essay-list">
-      <a class="essay-item" href="#" target="_blank" rel="noopener">
+      <a class="essay-item" href="https://www.woshipm.com/ai/6256436.html" target="_blank" rel="noopener">
         <div class="essay-item-main">
           <div class="essay-tags">
             <span class="essay-tag">模型评测</span>
@@ -280,7 +233,7 @@
           <span class="essay-arrow">→</span>
         </div>
       </a>
-      <a class="essay-item" href="#" target="_blank" rel="noopener">
+      <a class="essay-item" href="https://www.woshipm.com/ai/6247090.html" target="_blank" rel="noopener">
         <div class="essay-item-main">
           <div class="essay-tags">
             <span class="essay-tag">AI 生图</span>
@@ -294,7 +247,7 @@
           <span class="essay-arrow">→</span>
         </div>
       </a>
-      <a class="essay-item" href="#" target="_blank" rel="noopener">
+      <a class="essay-item" href="https://www.woshipm.com/ai/6247091.html" target="_blank" rel="noopener">
         <div class="essay-item-main">
           <div class="essay-tags">
             <span class="essay-tag">Multi-Agent</span>
@@ -354,10 +307,10 @@ function copyWeChat() {
 }
 
 // 语言切换
-document.querySelectorAll('.lang-btn').forEach(btn => {
+document.querySelectorAll('.nav-lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('.nav-lang-btn').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
     showToast('语言切换功能开发中...');
   });
 });
