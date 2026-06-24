@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投研信息阅读助手 — Pompeii</title>
+<link rel="stylesheet" href="onepage.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-content">
+    <a href="index.html" class="nav-logo">Pompeii</a>
+    <a href="portfolio.html#work" class="nav-back">← 返回作品集</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="fade-in">投研信息阅读助手</h1>
+  <p class="hero-subtitle fade-in">信息处理 · RAG</p>
+  <div class="hero-tags fade-in">
+    <span class="hero-tag">文档解析</span>
+    <span class="hero-tag">RAG</span>
+    <span class="hero-tag">摘要生成</span>
+    <span class="hero-tag">Citation</span>
+  </div>
+  <p class="hero-description fade-in">
+    支持研报、年报、纪要等长文档解析，通过结构化分块、摘要生成与来源溯源，提升信息阅读效率。
+  </p>
+</section>
+
+<!-- 前端运行界面截图占位（待补充） -->
+<section style="padding:0 22px 40px;max-width:980px;margin:0 auto;">
+  <figure class="screenshot-placeholder">
+    <div class="shot-frame">
+      <span class="shot-icon">🖼️</span>
+      <span class="shot-hint">前端运行界面截图</span>
+      <span class="shot-sub">待补充 · 建议放产品 Demo 的真实运行截图</span>
+    </div>
+    <figcaption>产品运行界面预览（截图待补充，替换此占位区域即可）</figcaption>
+  </figure>
+</section>
+
+<!-- 项目背景（内容待补充） -->
+<section class="section-dark" id="background">
+  <h2 class="section-title fade-in">项目背景</h2>
+  <div class="op-prose fade-in">
+    <p>📝 这是一个产品的 One Page 详情页占位。后续 Pompeii 会提供对应的 Markdown 文档，再往此处补充完整内容（项目背景、核心特性、工作流程、技术架构、数据成果、Roadmap 等）。</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="portfolio.html#work">返回作品集</a>
+  </div>
+  <p class="copyright">投研信息阅读助手 — Pompeii · AI 产品经理</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

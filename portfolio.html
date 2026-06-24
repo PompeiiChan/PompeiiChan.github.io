@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集 · Pompeii</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav">
+  <div class="nav-content">
+    <a class="nav-brand" href="index.html">Pompeii</a>
+    <div class="nav-links">
+      <a class="nav-link" href="#capabilities" data-nav="capabilities">能力</a>
+      <a class="nav-link" href="#work" data-nav="work">项目</a>
+      <a class="nav-link" href="#opensource" data-nav="opensource">开源</a>
+      <a class="nav-link" href="#writing" data-nav="writing">文章</a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active">中</button>
+      <button class="lang-btn">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap portfolio-wrap">
+
+<!-- 能力 -->
+<section class="section" id="capabilities">
+  <div class="section-head">
+    <div class="section-kicker">Capabilities</div>
+    <h2 class="section-title">能力</h2>
+  </div>
+  <div class="skills-strip">
+    <div class="skills-grid">
+      <div class="skill-col">
+        <div class="col-kicker">AI Product</div>
+        <h3 class="col-title">AI 产品能力</h3>
+        <div class="skill-items">
+          <div class="skill-item">AI 产品落地</div>
+          <div class="skill-item">AI 评测体系</div>
+          <div class="skill-item">需求分析</div>
+          <div class="skill-item">用户研究</div>
+          <div class="skill-item">数据分析</div>
+        </div>
+      </div>
+      <div class="skill-col">
+        <div class="col-kicker">Technical</div>
+        <h3 class="col-title">技术能力</h3>
+        <div class="skill-items">
+          <div class="skill-item">RAG 构建与评估</div>
+          <div class="skill-item">Agent 架构设计</div>
+          <div class="skill-item">Prompt Engineering</div>
+          <div class="skill-item">技术选型</div>
+        </div>
+      </div>
+      <div class="skill-col">
+        <div class="col-kicker">Engineering</div>
+        <h3 class="col-title">工程能力</h3>
+        <div class="skill-items">
+          <div class="skill-item">基于 SDD 的 Coding</div>
+          <div class="skill-item">前后端实现</div>
+          <div class="skill-item">前后端联调</div>
+          <div class="skill-item">Coding 落地不摸奖</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 落地项目 -->
+<section class="section" id="work">
+  <div class="section-head">
+    <div class="section-kicker">Shipped Projects</div>
+    <h2 class="section-title">落地项目</h2>
+  </div>
+  <div class="grid">
+    <a class="work-card" href="work-invest-agent.html">
+      <div class="work-card-top">
+        <span class="work-domain">投资研究 · Multi-Agent</span>
+        <span class="work-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="work-title">智能投研 Agent</h3>
+      <p class="work-desc">面向券商投研场景，设计 1 主 3 子 Agent 架构，支持问股、问数、热点、财报等任务分流。</p>
+      <div class="work-tags">
+        <span class="work-tag">Agent 架构</span>
+        <span class="work-tag">RAG</span>
+        <span class="work-tag">意图识别</span>
+        <span class="work-tag">评测体系</span>
+      </div>
+      <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
+    </a>
+
+    <a class="work-card" href="work-customer-service-agent.html">
+      <div class="work-card-top">
+        <span class="work-domain">客户服务 · Multi-Agent</span>
+        <span class="work-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="work-title">智能客服 Agent</h3>
+      <p class="work-desc">基于会话状态、意图识别与知识库检索，提升客服问答的一次性闭环率，减少误转人工。</p>
+      <div class="work-tags">
+        <span class="work-tag">CICC</span>
+        <span class="work-tag">多轮对话</span>
+        <span class="work-tag">RAG</span>
+        <span class="work-tag">路由策略</span>
+      </div>
+      <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
+    </a>
+
+    <a class="work-card" href="work-research-reading.html">
+      <div class="work-card-top">
+        <span class="work-domain">信息处理 · RAG</span>
+        <span class="work-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="work-title">投研信息阅读助手</h3>
+      <p class="work-desc">支持研报、年报、纪要等长文档解析，通过结构化分块、摘要生成与来源溯源，提升信息阅读效率。</p>
+      <div class="work-tags">
+        <span class="work-tag">文档解析</span>
+        <span class="work-tag">RAG</span>
+        <span class="work-tag">摘要生成</span>
+        <span class="work-tag">Citation</span>
+      </div>
+      <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
+    </a>
+
+    <a class="work-card" href="work-content-review.html">
+      <div class="work-card-top">
+        <span class="work-domain">营销合规 · 大模型</span>
+        <span class="work-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="work-title">营销合规审核助手</h3>
+      <p class="work-desc">面向券商营销物料审核场景，结合规则引擎与大模型能力，支持合规风险识别、审核节点配置与人工复核流转。</p>
+      <div class="work-tags">
+        <span class="work-tag">规则引擎</span>
+        <span class="work-tag">大模型</span>
+        <span class="work-tag">合规识别</span>
+        <span class="work-tag">人工复核</span>
+      </div>
+      <span class="work-link">查看详情 <span class="work-arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- 开源项目 -->
+<section class="section" id="opensource">
+  <div class="section-head">
+    <div class="section-kicker">Open Source</div>
+    <h2 class="section-title">开源项目</h2>
+  </div>
+  <div class="grid">
+    <a class="repo-card" href="repo-aipaper.html">
+      <div class="repo-card-top">
+        <span class="repo-domain">AI 论文 · 可视化</span>
+        <span class="repo-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="repo-title">AI 论文可视化解读</h3>
+      <div class="repo-name">AIpaper-explanation</div>
+      <p class="repo-desc">将 AI 论文拆解为结构化图文说明，降低阅读门槛。</p>
+      <div class="repo-tags">
+        <span class="repo-tag">LLM</span>
+        <span class="repo-tag">文档解析</span>
+        <span class="repo-tag">可视化</span>
+      </div>
+      <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
+    </a>
+
+    <a class="repo-card" href="repo-voxradar.html">
+      <div class="repo-card-top">
+        <span class="repo-domain">用户洞察 · NLP</span>
+        <span class="repo-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="repo-title">用户调研与舆情分析</h3>
+      <div class="repo-name">VoxRadar-1.0</div>
+      <p class="repo-desc">面向用户反馈与舆情文本的分析工具，用于提取主题、情绪与关键洞察。</p>
+      <div class="repo-tags">
+        <span class="repo-tag">用户研究</span>
+        <span class="repo-tag">NLP</span>
+        <span class="repo-tag">数据分析</span>
+      </div>
+      <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
+    </a>
+
+    <a class="repo-card" href="repo-tidesignal.html">
+      <div class="repo-card-top">
+        <span class="repo-domain">投资研究 · RAG</span>
+        <span class="repo-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="repo-title">智能投研项目</h3>
+      <div class="repo-name">TideSignal-InvestmentResearch</div>
+      <p class="repo-desc">面向投研场景的 AI 产品原型，支持信息聚合、问答分析与投资研究辅助。</p>
+      <div class="repo-tags">
+        <span class="repo-tag">RAG</span>
+        <span class="repo-tag">投研场景</span>
+        <span class="repo-tag">Agent</span>
+      </div>
+      <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
+    </a>
+
+    <a class="repo-card" href="repo-promptpilot.html">
+      <div class="repo-card-top">
+        <span class="repo-domain">Prompt 工程 · 人机协同</span>
+        <span class="repo-ext" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <h3 class="repo-title">人机协同 Prompt 工程</h3>
+      <div class="repo-name">PromptPilot</div>
+      <p class="repo-desc">人机协同驾驭 Prompt 工程，支持 Prompt 设计、评估与持续优化的 human-in-the-loop 工作流。</p>
+      <div class="repo-tags">
+        <span class="repo-tag">Prompt 工程</span>
+        <span class="repo-tag">人机协同</span>
+        <span class="repo-tag">评估体系</span>
+      </div>
+      <span class="repo-link">查看详情 <span class="repo-arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- 文章与思考 -->
+<section class="section" id="writing">
+  <div class="section-head">
+    <div class="section-kicker">Writing</div>
+    <h2 class="section-title">文章与思考</h2>
+  </div>
+  <div class="essays">
+    <div class="grid">
+      <a class="essay-featured" href="#" target="_blank" rel="noopener">
+        <div class="essay-tags">
+          <span class="essay-tag">AI 产品</span>
+          <span class="essay-tag">产品思考</span>
+        </div>
+        <h3 class="essay-title">AI 产品的护城河是什么？</h3>
+        <p class="essay-summary">从模型能力、业务流程到数据闭环，重新理解 AI 产品真正难以复制的部分。</p>
+        <div class="essay-meta">
+          <span class="essay-date">2025-12-24</span>
+          <span class="essay-read">阅读 <span class="essay-arrow">→</span></span>
+        </div>
+      </a>
+      <a class="essay-featured" href="#" target="_blank" rel="noopener">
+        <div class="essay-tags">
+          <span class="essay-tag">Agent</span>
+          <span class="essay-tag">Function Call</span>
+        </div>
+        <h3 class="essay-title">OpenAI 发布：Agent 实战手册</h3>
+        <p class="essay-summary">围绕 Agent 的工具调用、任务规划与执行闭环，拆解 OpenAI 对 Agent 产品化的实践方法。</p>
+        <div class="essay-meta">
+          <span class="essay-date">2025-09-22</span>
+          <span class="essay-read">阅读 <span class="essay-arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+    <div class="essay-list">
+      <a class="essay-item" href="#" target="_blank" rel="noopener">
+        <div class="essay-item-main">
+          <div class="essay-tags">
+            <span class="essay-tag">模型评测</span>
+            <span class="essay-tag">Eval</span>
+          </div>
+          <h3 class="essay-item-title">从零到一：搭建模型自动化评测体系</h3>
+          <p class="essay-item-summary">从数据集、评分维度到回归测试，系统梳理模型评测体系的搭建方法。</p>
+        </div>
+        <div class="essay-item-side">
+          <span class="essay-date">2025-08-18</span>
+          <span class="essay-arrow">→</span>
+        </div>
+      </a>
+      <a class="essay-item" href="#" target="_blank" rel="noopener">
+        <div class="essay-item-main">
+          <div class="essay-tags">
+            <span class="essay-tag">AI 生图</span>
+            <span class="essay-tag">技术科普</span>
+          </div>
+          <h3 class="essay-item-title">一篇文章系统看懂 AI 文生图原理</h3>
+          <p class="essay-item-summary">从 Diffusion Model 到 CLIP，再到训练与推理流程，系统解释 AI 文生图的底层逻辑。</p>
+        </div>
+        <div class="essay-item-side">
+          <span class="essay-date">2025-08-04</span>
+          <span class="essay-arrow">→</span>
+        </div>
+      </a>
+      <a class="essay-item" href="#" target="_blank" rel="noopener">
+        <div class="essay-item-main">
+          <div class="essay-tags">
+            <span class="essay-tag">Multi-Agent</span>
+            <span class="essay-tag">系统设计</span>
+          </div>
+          <h3 class="essay-item-title">Agent 的新思路：构建多 Agent 系统</h3>
+          <p class="essay-item-summary">结合多 Agent 系统的分工、协作与路由机制，理解复杂任务如何被拆解和执行。</p>
+        </div>
+        <div class="essay-item-side">
+          <span class="essay-date">2025-07-28</span>
+          <span class="essay-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wechat-box" onclick="copyWeChat()">
+    <span class="label">WeChat</span>
+    <span class="value">PompeiiNeverStop</span>
+  </div>
+  <p>© 2026 Pompeii · AI 产品经理</p>
+</footer>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">已复制到剪贴板</div>
+
+<script>
+// 导航高亮（滚动联动 active）
+const navLinks = document.querySelectorAll('.nav-link[data-nav]');
+const navTargets = ['capabilities','work','opensource','writing']
+  .map(id => document.getElementById(id))
+  .filter(Boolean);
+if (navTargets.length) {
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.dataset.nav === id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  navTargets.forEach(el => navObserver.observe(el));
+}
+
+// 复制 WeChat
+function copyWeChat() {
+  navigator.clipboard.writeText('PompeiiNeverStop').then(() => {
+    showToast('已复制到剪贴板');
+  });
+}
+
+// 语言切换
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    showToast('语言切换功能开发中...');
+  });
+});
+
+// Toast
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2000);
+}
+</script>
+
+</body>
+</html>

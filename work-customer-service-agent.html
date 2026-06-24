@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汽车智能客服 Agent — Pompeii</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="onepage.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-content">
+    <a href="index.html" class="nav-logo">Pompeii</a>
+    <div class="nav-links">
+      <a href="#background">项目背景</a>
+      <a href="#features">核心特性</a>
+      <a href="#workflow">工作流程</a>
+      <a href="#tech">技术架构</a>
+    </div>
+    <a href="portfolio.html#work" class="nav-back">← 返回作品集</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="fade-in">汽车智能客服</h1>
+  <p class="hero-subtitle fade-in">AI 接住高频咨询，复杂问题精准转人工</p>
+  <div class="hero-tags fade-in">
+    <span class="hero-tag">多轮对话</span>
+    <span class="hero-tag">RAG</span>
+    <span class="hero-tag">情绪识别</span>
+    <span class="hero-tag">转人工工单</span>
+  </div>
+  <p class="hero-description fade-in">
+    汽车企业客服团队的 Web 工作台。<br>
+    AI 先接 -&gt; 判断是否需要人 -&gt; 转人工 -&gt; 人机协作处理完，一个可演示的完整闭环。
+  </p>
+  <div class="fade-in">
+    <a href="https://github.com/PompeiiChan/DEMO_CarIntelligentCustomerService" target="_blank" rel="noopener" class="cta-button">查看 GitHub</a>
+    <a href="#background" class="cta-button secondary">了解项目</a>
+  </div>
+</section>
+
+<!-- 前端运行界面截图占位（待补充） -->
+<section style="padding:0 22px 40px;max-width:980px;margin:0 auto;">
+  <figure class="screenshot-placeholder">
+    <div class="shot-frame">
+      <span class="shot-icon">🖼️</span>
+      <span class="shot-hint">前端运行界面截图</span>
+      <span class="shot-sub">待补充 · 建议放 Demo 真实运行截图（聊天页 / 工单队列 / 客服工作台）</span>
+    </div>
+    <figcaption>产品运行界面预览（截图待补充，替换此占位区域即可）</figcaption>
+  </figure>
+</section>
+
+<!-- 项目背景 -->
+<section class="section-dark" id="background">
+  <h2 class="section-title fade-in">项目背景</h2>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item fade-in">
+      <h3>现状问题</h3>
+      <p>
+        汽车客服场景里，大量咨询集中在车型、价格、保养、维修、政策和预约等高频问题上，
+        人工客服容易被重复问题占满。传统关键词机器人很难理解上下文、情绪和模糊表达，
+        遇到复杂问题时也缺少顺滑的转人工链路。
+      </p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>解决方案</h3>
+      <p>
+        用户在聊天页输入问题或点击快捷问法后，系统先识别意图、情绪和上下文，再结合汽车
+        知识库生成回答。如果问题连续无法解决、用户情绪偏负面或需要人工确认，系统会自动
+        创建工单并进入客服队列——客服可查看历史、接管回复，也可使用 AI 回复建议。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 核心特性 -->
+<section id="features">
+  <h2 class="section-title fade-in">核心特性</h2>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">💬</div>
+      <h3>上下文对话</h3>
+      <p>用户可在聊天页完成汽车咨询，系统结合上下文给出更连贯的回答。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🎯</div>
+      <h3>智能转人工</h3>
+      <p>识别模糊问题、负面情绪和高风险场景，并自动触发转人工工单。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🗂️</div>
+      <h3>工单工作台</h3>
+      <p>客服可查看排队工单、历史对话与用户上下文，减少重复询问。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">✍️</div>
+      <h3>AI 回复建议</h3>
+      <p>客服处理过程中可生成 AI 回复建议，提升人工接待效率。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📚</div>
+      <h3>知识库管理</h3>
+      <p>管理侧支持维护 Markdown 知识文档，为车型、价格、保养、维修与政策问答提供来源。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 工作流程 -->
+<section class="section-dark" id="workflow">
+  <h2 class="section-title fade-in">Prompt 流转</h2>
+
+  <div class="workflow-container fade-in">
+    <div class="mermaid">
+flowchart TD
+  A["💬 用户 Prompt<br/>预算购车 / 车型对比 / 车抛锚 / 充不了电"] --> B["📚 加载会话上下文<br/>最近 5 轮对话 + session 状态"]
+
+  B --> C{"🧭 意图识别"}
+  C -->|"明确要人工"| H1["直接转人工<br/>reason=用户要求"]
+  C -->|"高风险售后<br/>抛锚/无法启动/充不了电/事故/救援"| H2["直接转人工<br/>reason=高风险售后<br/>priority=high"]
+  C -->|"普通咨询"| D["🗂️ 分类 Prompt<br/>只返回 JSON"]
+
+  D --> E["🔍 解析结构化结果<br/>route: 售前/售中/售后<br/>intent_l1 · confidence · need_clarify<br/>emotion · need_human"]
+
+  E --> F{"🧩 路由决策"}
+  F -->|"need_clarify=true"| Q["❓ 澄清反问<br/>只追问一个关键问题"]
+  F -->|"confidence &lt; 0.4 / 连续3次兜底"| H3["转人工<br/>reason=连续未匹配"]
+  F -->|"情绪负面 score&gt;0.6"| H4["转人工<br/>reason=情绪负面<br/>priority=high"]
+  F -->|"订单/交付需后台核实"| H5["转人工<br/>reason=订单需核实"]
+  F -->|"投诉/升级"| H6["转人工<br/>reason=投诉升级"]
+  F -->|"可自动回答"| R["🔎 RAG 检索<br/>向量召回 + BM25 + 历史 QA + 结构化车型数据"]
+
+  R --> P["✍️ 生成最终 Prompt<br/>System Prompt + 对话历史<br/>+ 意图标签 + 原始问题 + 检索上下文"]
+  P --> G["🤖 LLM 生成客服回复<br/>简洁专业友好 / 给具体数字<br/>不确定则引导人工或门店"]
+
+  Q --> S["💾 持久化消息<br/>intent / confidence / emotion / round"]
+  G --> S
+  H1 --> T["🎫 创建工单<br/>ticket + session.transferring<br/>推送坐席工作台"]
+  H2 --> T
+  H3 --> T
+  H4 --> T
+  H5 --> T
+  H6 --> T
+  T --> U["🧑‍💼 坐席接管<br/>查看上下文 / 人工回复 / AI 建议<br/>关闭工单 / 转回 AI"]
+
+  style A fill:#e3f2fd
+  style B fill:#e3f2fd
+  style C fill:#fff3e0
+  style H1 fill:#fff9c4
+  style H2 fill:#fff9c4
+  style D fill:#f3e5f5
+  style E fill:#f3e5f5
+  style F fill:#fff3e0
+  style Q fill:#fff9c4
+  style H3 fill:#fff9c4
+  style H4 fill:#fff9c4
+  style H5 fill:#fff9c4
+  style H6 fill:#fff9c4
+  style R fill:#e8f5e9
+  style P fill:#fce4ec
+  style G fill:#b3e5fc
+  style S fill:#c8e6c9
+  style T fill:#fce4ec
+  style U fill:#c8e6c9
+    </div>
+  </div>
+</section>
+
+<!-- 技术架构 -->
+<section id="tech">
+  <h2 class="section-title fade-in">技术架构</h2>
+
+  <div class="op-prose fade-in">
+    <p><strong>技术栈：</strong>React 19 / TypeScript / Vite / FastAPI / SQLite / Chroma / OpenAI-compatible LLM API / WebSocket / pytest / ruff。</p>
+    <p><strong>架构亮点：</strong></p>
+    <ul>
+      <li>前后端职责清晰：前端负责聊天、队列、客服工作台与知识库管理，后端负责任务编排、工单状态、知识检索与模型调用。</li>
+      <li>采用 Mock-first 到真实 API 的开发路径，先跑通交互体验，再逐步替换为后端真实链路，降低端到端集成风险。</li>
+      <li>将 AI 对话拆成意图识别、情绪判断、知识检索、回复生成与转人工决策，便于调试与后续扩展。</li>
+      <li>知识库基于 Markdown 文档构建，结合向量检索、关键词检索与重排思路，支持从结构化汽车资料中召回答案依据。</li>
+      <li>工单流转保留对话历史、客服动作与 bad case 标记，为后续质检、回放与评测沉淀数据基础。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 数据与成果 -->
+<section class="section-dark">
+  <h2 class="section-title fade-in">项目进展</h2>
+
+  <div class="op-prose fade-in">
+    <p>当前项目是本地可运行 Demo，已跑通「用户咨询 -&gt; AI 回复 -&gt; 自动转人工 -&gt; 客服接管 -&gt; AI 回复建议 -&gt; 转回 AI / 关闭工单」的核心链路。</p>
+    <p><strong>E1 回归</strong>已验证 3 个关键场景：预算购车咨询与试驾预约、连续模糊问题自动建单、负面情绪触发高优先级工单并由客服处理。</p>
+    <p><strong>E2 启动回归</strong>已验证后端健康检查、前端访问与首条真实聊天消息。后端检索与知识切分相关测试已通过。</p>
+  </div>
+
+  <div class="op-link-center fade-in">
+    <a class="op-github" href="https://github.com/PompeiiChan/DEMO_CarIntelligentCustomerService.git" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.7 2.6 1.2.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+      DEMO_CarIntelligentCustomerService
+    </a>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section>
+  <h2 class="section-title fade-in">Roadmap</h2>
+
+  <div class="op-prose fade-in">
+    <ul>
+      <li>完善知识库来源标注与更新流程，避免过期车型、价格或政策信息被直接承诺给用户。</li>
+      <li>增加客服质检看板，把 bad case、人工接管原因与 AI 建议采纳情况沉淀为可分析数据。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/PompeiiChan/DEMO_CarIntelligentCustomerService" target="_blank" rel="noopener">GitHub</a>
+    <a href="portfolio.html#work">返回作品集</a>
+  </div>
+  <p class="copyright">汽车智能客服 Agent — Pompeii · AI 产品经理</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' } });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const id = this.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

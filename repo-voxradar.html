@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用户调研与舆情分析 · VoxRadar — Pompeii</title>
+<link rel="stylesheet" href="onepage.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-content">
+    <a href="index.html" class="nav-logo">Pompeii</a>
+    <a href="portfolio.html#opensource" class="nav-back">← 返回作品集</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="fade-in">用户调研与舆情分析</h1>
+  <p class="hero-subtitle fade-in">VoxRadar-1.0 · 开源</p>
+  <div class="hero-tags fade-in">
+    <span class="hero-tag">用户研究</span>
+    <span class="hero-tag">NLP</span>
+    <span class="hero-tag">数据分析</span>
+  </div>
+  <p class="hero-description fade-in">
+    面向用户反馈与舆情文本的分析工具，用于提取主题、情绪与关键洞察。
+  </p>
+</section>
+
+<!-- 前端运行界面截图占位（待补充） -->
+<section style="padding:0 22px 40px;max-width:980px;margin:0 auto;">
+  <figure class="screenshot-placeholder">
+    <div class="shot-frame">
+      <span class="shot-icon">🖼️</span>
+      <span class="shot-hint">前端运行界面截图</span>
+      <span class="shot-sub">待补充 · 建议放项目真实运行截图</span>
+    </div>
+    <figcaption>产品运行界面预览（截图待补充，替换此占位区域即可）</figcaption>
+  </figure>
+</section>
+
+<!-- 项目背景（内容待补充） -->
+<section class="section-dark" id="background">
+  <h2 class="section-title fade-in">项目背景</h2>
+  <div class="op-prose fade-in">
+    <p>📝 这是一个开源项目的 One Page 详情页占位。后续 Pompeii 会提供对应的 Markdown 文档，再往此处补充完整内容。</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="portfolio.html#opensource">返回作品集</a>
+  </div>
+  <p class="copyright">用户调研与舆情分析 · VoxRadar-1.0 — Pompeii</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

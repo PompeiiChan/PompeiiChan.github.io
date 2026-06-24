@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Pilot · 人机协同驾驭 Prompt 工程 — Pompeii</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="onepage.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-content">
+    <a href="index.html" class="nav-logo">Pompeii</a>
+    <div class="nav-links">
+      <a href="#background">项目背景</a>
+      <a href="#features">核心特性</a>
+      <a href="#workflow">工作流程</a>
+      <a href="#philosophy">设计理念</a>
+    </div>
+    <a href="portfolio.html#opensource" class="nav-back">← 返回作品集</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="fade-in">Prompt Pilot</h1>
+  <p class="hero-subtitle fade-in">人机协同驾驭 Prompt 工程</p>
+  <div class="hero-tags fade-in">
+    <span class="hero-tag">Prompt 工程</span>
+    <span class="hero-tag">人机协同</span>
+    <span class="hero-tag">评测体系</span>
+    <span class="hero-tag">Git 版本回滚</span>
+  </div>
+  <p class="hero-description fade-in">
+    把模糊需求变成生产级 Prompt，用系统化评测驱动持续迭代。<br>
+    让 Prompt 工程可控、可度量、可交付。
+  </p>
+  <div class="fade-in">
+    <a href="https://github.com/PompeiiChan/PromptPilot" target="_blank" rel="noopener" class="cta-button">查看 GitHub</a>
+    <a href="#background" class="cta-button secondary">了解项目</a>
+  </div>
+</section>
+
+<!-- 前端运行界面截图占位（待补充） -->
+<section style="padding:0 22px 40px;max-width:980px;margin:0 auto;">
+  <figure class="screenshot-placeholder">
+    <div class="shot-frame">
+      <span class="shot-icon">🖼️</span>
+      <span class="shot-hint">前端运行界面截图</span>
+      <span class="shot-sub">待补充 · 建议放 Prompt Pilot 工作台真实运行截图</span>
+    </div>
+    <figcaption>产品运行界面预览（截图待补充，替换此占位区域即可）</figcaption>
+  </figure>
+</section>
+
+<!-- 项目背景 -->
+<section class="section-dark" id="background">
+  <h2 class="section-title fade-in">项目背景</h2>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item fade-in">
+      <h3>现状问题</h3>
+      <p>
+        传统的 Prompt 工程是临时的、不可预测的。开发者凭直觉编写 Prompt，手动测试几个例子后就上线——
+        只在生产环境才发现边缘问题。没有系统化的质量评估方法，迭代更是靠运气。
+      </p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>解决方案</h3>
+      <p>
+        Prompt Pilot 将 Prompt 视为软件产品。从需求澄清到自动化评测，每一步都结构化、可度量。
+        人类做战略决策，AI 负责执行。质量由数据驱动，而非猜测。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 核心特性 -->
+<section id="features">
+  <h2 class="section-title fade-in">核心特性</h2>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">👤</div>
+      <h3>人在回路（HITL）</h3>
+      <p>每个关键决策点都需要人类判断。AI 执行分析，人类做决策。在保证质量的同时维持效率——兼顾两者的优势。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📊</div>
+      <h3>数据驱动迭代</h3>
+      <p>评测报告包含 Good/Bad case 和根因分析，指导你的下一步行动。停止猜测——基于证据迭代。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🔄</div>
+      <h3>完整工作流</h3>
+      <p>七阶段从想法到生产：需求澄清 → 编写 → 评测 → 迭代 → 发布。无遗漏，无死角。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">⏮️</div>
+      <h3>Git 版本回滚</h3>
+      <p>每个阶段和每次评测都会自动打标签。可随时回滚到任意历史状态。大胆实验——总能回到过去。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">⚡</div>
+      <h3>并行执行</h3>
+      <p>测试用例生成和评分框架设计并行运行。当步骤相互独立时，无需等待。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🎯</div>
+      <h3>根因分析</h3>
+      <p>失效模式被聚合和分类。精确知道该修复需求、优化 Prompt 还是调整评测——上游问题优先处理。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 工作流程 -->
+<section class="section-dark" id="workflow">
+  <h2 class="section-title fade-in">七阶段工作流</h2>
+
+  <div class="workflow-container fade-in">
+    <div class="mermaid">
+flowchart TD
+    A[🎯 需求澄清<br/>Phase 1] --> B[✍️ Prompt 编写<br/>Phase 2]
+    B --> C{📊 评测准备<br/>Phase 3+4}
+    C --> D[🧪 评测集生成<br/>测试用例]
+    C --> E[📏 评测框架设计<br/>评分标准]
+    D --> F[🚀 评测执行<br/>Phase 5]
+    E --> F
+    F --> G{👤 人工 Review}
+    G -->|Phase 1 根因| A
+    G -->|Phase 3/4 问题| C
+    G -->|Phase 2 问题| B
+    G -.->|可选| I[🗜️ 压缩优化<br/>Phase 6]
+    I --> F
+    G -->|✅ 验收通过| P[📦 发布入库<br/>Phase 7]
+    P --> H[🎉 完成]
+
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#e8f5e9
+    style E fill:#e8f5e9
+    style F fill:#fce4ec
+    style G fill:#fff9c4
+    style P fill:#b3e5fc
+    style H fill:#c8e6c9
+    style I fill:#e1bee7
+    </div>
+  </div>
+</section>
+
+<!-- 设计理念 -->
+<section id="philosophy">
+  <h2 class="section-title fade-in">设计理念</h2>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item fade-in">
+      <h3>上游问题优先</h3>
+      <p>不要在需求模糊时反复打磨 Prompt。修复上游需求比迭代下游更有效。根因分析优先处理 Phase 1 问题而非 Phase 2——先解决正确的问题。</p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>人工判断高于自动化</h3>
+      <p>AI 擅长执行，但战略决策需要人类判断。HITL 协议确保人类审批 PRD、审查评测报告、决策迭代路线。没有监督的自动化是风险。</p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>度量驱动改进</h3>
+      <p>无法度量就无法改进。基于 Rubric 和测试用例的评测提供客观指标。质量评分和失效模式告诉你应该聚焦哪里。直觉有帮助，数据更可靠。</p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>通过版本控制保障安全</h3>
+      <p>基于 Git 的标签意味着每个状态都可恢复。可回滚到任意阶段或评测点。大胆探索——错误可逆转。这个安全网鼓励实验，防止恐惧驱动的保守。</p>
+    </div>
+  </div>
+</section>
+
+<!-- GitHub -->
+<section class="section-dark">
+  <h2 class="section-title fade-in">GitHub</h2>
+  <div class="op-link-center fade-in">
+    <a class="op-github" href="https://github.com/PompeiiChan/PromptPilot" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.7 2.6 1.2.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+      PompeiiChan/PromptPilot
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/PompeiiChan/PromptPilot" target="_blank" rel="noopener">GitHub</a>
+    <a href="portfolio.html#opensource">返回作品集</a>
+  </div>
+  <p class="copyright">Prompt Pilot — 人机协同驾驭 Prompt 工程 · Pompeii</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { useMaxWidth: false, htmlLabels: true, curve: 'basis' } });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const id = this.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智能投研 Agent · 潮声 TideSignal — Pompeii</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<link rel="stylesheet" href="onepage.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-content">
+    <a href="index.html" class="nav-logo">Pompeii</a>
+    <div class="nav-links">
+      <a href="#background">项目背景</a>
+      <a href="#features">核心特性</a>
+      <a href="#workflow">工作流程</a>
+      <a href="#tech">技术架构</a>
+    </div>
+    <a href="portfolio.html#work" class="nav-back">← 返回作品集</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="fade-in">智能投研 Agent</h1>
+  <p class="hero-subtitle fade-in">潮声 TideSignal · 自然语言的 A 股投研对话助手</p>
+  <div class="hero-tags fade-in">
+    <span class="hero-tag">Agent 架构</span>
+    <span class="hero-tag">RAG</span>
+    <span class="hero-tag">意图识别</span>
+    <span class="hero-tag">评测体系</span>
+  </div>
+  <p class="hero-description fade-in">
+    帮散户和投顾用自然语言快速查询 A 股热点、个股基本面和关键数据。<br>
+    把投研问题收敛到一个对话入口，回答带引用、风险提示与富组件。
+  </p>
+  <div class="fade-in">
+    <a href="https://github.com/PompeiiChan/TideSignal-InvestmentResearch" target="_blank" rel="noopener" class="cta-button">查看 GitHub</a>
+    <a href="#background" class="cta-button secondary">了解项目</a>
+  </div>
+</section>
+
+<!-- 前端运行界面截图占位（待补充） -->
+<section style="padding:0 22px 40px;max-width:980px;margin:0 auto;">
+  <figure class="screenshot-placeholder">
+    <div class="shot-frame">
+      <span class="shot-icon">🖼️</span>
+      <span class="shot-hint">前端运行界面截图</span>
+      <span class="shot-sub">待补充 · 建议放 Demo 真实运行截图（对话 / 富组件 / Trace 面板）</span>
+    </div>
+    <figcaption>产品运行界面预览（截图待补充，替换此占位区域即可）</figcaption>
+  </figure>
+</section>
+
+<!-- 项目背景 -->
+<section class="section-dark" id="background">
+  <h2 class="section-title fade-in">项目背景</h2>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item fade-in">
+      <h3>现状问题</h3>
+      <p>
+        散户和投顾每天都会遇到大量重复投研问题：某只股票基本面怎么样、板块为什么异动、
+        财报指标怎么看、近期热点和相关公司有哪些。如果不用这类工具，用户通常要在行情软件、
+        研报、公告和新闻之间来回切换——信息分散、口径不统一，也很难判断回答依据来自哪里。
+      </p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>解决方案</h3>
+      <p>
+        TideSignal 把投研问题收敛到一个对话入口。用户用口语提问后，系统先识别意图和关键槽位，
+        再路由到热点、问数、问股或文档问答链路，结合本地知识库、行情/财务工具和 LLM 生成
+        带引用、风险提示和富组件的回答。管理端保留 Trace 面板，可回溯每轮回答经过的节点。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 核心特性 -->
+<section id="features">
+  <h2 class="section-title fade-in">核心特性</h2>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">💬</div>
+      <h3>对话式提问</h3>
+      <p>可以直接提问热点、问数、问股和文档类问题，系统自动选择对应处理链路。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📑</div>
+      <h3>来源可溯</h3>
+      <p>把财报、研报、热点月报和结构化数据作为回答依据，并在回答中展示来源与风险提示。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📊</div>
+      <h3>富组件呈现</h3>
+      <p>对排行、热力图、个股分析和收益测算等场景，用表格、卡片、热力图与计算组件呈现结果。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🔁</div>
+      <h3>多轮记忆</h3>
+      <p>多轮追问支持短期记忆与槽位继承，不用每次重复股票名称、时间范围和分析维度。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🔎</div>
+      <h3>Trace 回放</h3>
+      <p>管理端可查看 Trace，追踪意图识别、工具调用、RAG 命中、质检与回答组装过程。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 工作流程 -->
+<section class="section-dark" id="workflow">
+  <h2 class="section-title fade-in">工作流程</h2>
+
+  <div class="workflow-container fade-in">
+    <div class="mermaid">
+flowchart TD
+    U[💬 用户提问] --> I[🎯 意图识别 + 槽位抽取]
+    I --> C{需要澄清?}
+    C -- 是 --> CL[❓ 澄清追问]
+    C -- 否 --> R[🧭 路由决策]
+
+    R --> H[🔥 热点 Agent]
+    R --> D[📊 问数 Agent]
+    R --> S[📈 问股 Agent]
+
+    H & S --> RAG[🔎 RAG 检索<br/>财报 / 研报 / 热点月报]
+    H & D & S --> TOOL[🛠️ 工具调用<br/>东财行情 / 新浪财报 / 巨潮公告]
+
+    RAG & TOOL --> EM[📦 证据聚合]
+    EM --> QC[🛡️ 质检<br/>合规扫描 / 引用完整 / 数据一致]
+    QC --> ASM[✍️ 回答组装<br/>流式正文 + 富组件 + 参考来源]
+    ASM --> U
+    CL --> U
+
+    style U fill:#e3f2fd
+    style I fill:#f3e5f5
+    style C fill:#fff3e0
+    style CL fill:#fff9c4
+    style R fill:#e8f5e9
+    style H fill:#fce4ec
+    style D fill:#b3e5fc
+    style S fill:#e1bee7
+    style RAG fill:#c8e6c9
+    style TOOL fill:#fce4ec
+    style EM fill:#f3e5f5
+    style QC fill:#fff3e0
+    style ASM fill:#b3e5fc
+    </div>
+  </div>
+</section>
+
+<!-- 技术架构 -->
+<section id="tech">
+  <h2 class="section-title fade-in">技术架构</h2>
+
+  <div class="op-prose fade-in">
+    <p><strong>技术栈：</strong>React 19、TypeScript、Vite、Ant Design、Zustand、FastAPI、LangGraph、SQLite、SQLAlchemy、SiliconFlow LLM / Embedding / Rerank、本地 Markdown 知识库、SSE 流式输出。</p>
+    <p><strong>架构亮点：</strong></p>
+    <ul>
+      <li>前后端职责清晰：前端负责对话体验、富组件与管理端 Trace 展示；后端负责任务编排、模型调用、RAG 检索、工具调用与数据持久化。</li>
+      <li>Agent 流程被拆成稳定节点，包括上下文预处理、意图识别、槽位抽取、Query 改写、路由、工具调用、RAG、证据聚合、质检与回答组装，便于调试与扩展。</li>
+      <li>RAG 使用本地 Markdown 知识库承接财报、研报与热点资料，回答不只依赖模型生成，而是尽量回到可追溯证据。</li>
+      <li>金融场景保留合规边界：不做确定性买卖建议，收益测算走公式化工具，回答中保留风险提示与来源口径。</li>
+      <li>工程上保留可观测性与回归材料：Trace API、节点 raw JSON、测试报告、用户验收记录与部署说明都已落盘。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 数据与成果 -->
+<section class="section-dark">
+  <h2 class="section-title fade-in">项目进展</h2>
+
+  <div class="op-prose fade-in">
+    <p>当前 Demo 已跑通「自然语言提问 -&gt; Agent 路由 -&gt; RAG / 工具取数 -&gt; 证据聚合 -&gt; 质检 -&gt; 流式回答 -&gt; Trace 回放」的核心链路。</p>
+    <p>已完成并验收的范围包括：MVP 前端与后端 API、真实 LLM / Embedding / Rerank、本地知识库检索、LangGraph 编排、多轮记忆、问股 live 工具、问数/热点/估值工具增强、回答组装性能与 citation 加固。</p>
+    <p>当前知识库已落盘 <strong>55 家公司财报、5 份公司研报、10 份行业研报、3 份月度热点资料</strong>与结构化清单；仓库内已有后端测试、前端构建检查、E2E 脚本与多轮 <code>.sdd/test-reports</code> 验收记录。</p>
+  </div>
+
+  <div class="op-link-center fade-in">
+    <a class="op-github" href="https://github.com/PompeiiChan/TideSignal-InvestmentResearch.git" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.7 2.6 1.2.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+      TideSignal-InvestmentResearch
+    </a>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section>
+  <h2 class="section-title fade-in">Roadmap</h2>
+
+  <div class="op-prose fade-in">
+    <ul>
+      <li>继续增强问数与估值能力：补齐指数/单股报价、历史区间、同行估值对比与 EPS / PEG 等场景。</li>
+      <li>建立小型评测集：沉淀热点、问股、问数、多轮追问与 bad case 样例，用于持续回归回答质量。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="https://github.com/PompeiiChan/TideSignal-InvestmentResearch" target="_blank" rel="noopener">GitHub</a>
+    <a href="portfolio.html#work">返回作品集</a>
+  </div>
+  <p class="copyright">智能投研 Agent · 潮声 TideSignal — Pompeii · AI 产品经理</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' } });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const id = this.getAttribute('href');
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
