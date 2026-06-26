@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>投研信息阅读助手 — Pompeii</title>
+<title>投研信息助手 — Pompeii</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <link rel="stylesheet" href="onepage.css">
 </head>
 <body>
@@ -12,16 +13,22 @@
 <nav>
   <div class="nav-content">
     <a href="index.html" class="nav-logo">Pompeii</a>
+    <div class="nav-links">
+      <a href="#background">项目背景</a>
+      <a href="#features">核心特性</a>
+      <a href="#workflow">工作流程</a>
+      <a href="#evolution">演进路径</a>
+    </div>
     <a href="portfolio.html#work" class="nav-back">← 返回作品集</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <h1 class="fade-in">投研信息阅读助手</h1>
-  <p class="hero-subtitle fade-in">投研信息阅读助手</p>
+  <h1 class="fade-in">投研信息助手</h1>
+  <p class="hero-subtitle fade-in">ResearchReading-Assistant</p>
   <p class="hero-description fade-in">
-    支持研报、年报、纪要等长文档解析，通过结构化分块、摘要生成与来源溯源，提升信息阅读效率。
+    面向投研分析师的 AI 阅读提效工具，把年报、深度研报、业绩交流会纪要的阅读整理时间，从 2-3 小时压缩到分钟级。
   </p>
 </section>
 
@@ -32,34 +39,158 @@
       <div class="mac-window mac-window--auto">
         <div class="mac-titlebar">
           <div class="mac-dots"><span class="mac-dot red"></span><span class="mac-dot yellow"></span><span class="mac-dot green"></span></div>
-          <span class="mac-title">信息流 · 原始视图</span>
+          <span class="mac-title">阅读 · 原文视图</span>
         </div>
         <div class="mac-viewport">
-          <img src="images/research-raw.png" alt="投研信息阅读助手 · 原始信息流">
+          <img src="images/research-raw.png" alt="投研信息助手 · 原文阅读视图">
         </div>
       </div>
-      <p class="cs-cap">信息原文呈现，海量资讯需逐条翻阅、自行标记重点。</p>
+      <p class="cs-cap">长文档原文呈现，关键信息散落各处，需逐段阅读、自行提炼。</p>
     </div>
     <div>
       <div class="mac-window mac-window--auto">
         <div class="mac-titlebar">
           <div class="mac-dots"><span class="mac-dot red"></span><span class="mac-dot yellow"></span><span class="mac-dot green"></span></div>
-          <span class="mac-title">信息流 · 智能摘要</span>
+          <span class="mac-title">阅读 · 智能摘要</span>
         </div>
         <div class="mac-viewport">
-          <img src="images/research-summary.png" alt="投研信息阅读助手 · 智能摘要">
+          <img src="images/research-summary.png" alt="投研信息助手 · 智能摘要">
         </div>
       </div>
-      <p class="cs-cap">自动提炼结构化摘要，要点、关联与变动一目了然。</p>
+      <p class="cs-cap">自动生成结构化摘要，要点、变化与来源一目了然。</p>
     </div>
   </div>
 </section>
 
-<!-- 项目背景（内容待补充） -->
+<!-- 项目背景 -->
 <section class="section-dark" id="background">
   <h2 class="section-title fade-in">项目背景</h2>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item fade-in">
+      <h3>现状问题</h3>
+      <p>
+        广东地区小型私募的投研分析师，通常 1-3 人就要覆盖多个行业，每天却被三类高密度文档占满：
+        百页级的企业年报、各机构格式各异的深度研报、口语化且信号稀疏的业绩交流会纪要。
+        单份文档往往要读 2-3 小时，信息太多、时间不够用，是每天都真实的痛点。
+      </p>
+    </div>
+    <div class="philosophy-item fade-in">
+      <h3>解决方案</h3>
+      <p>
+        不做一个泛泛的聊天机器人，而是为三类文档各自设计一条独立的 Prompt 链路，按场景做结构化提炼。
+        从 V1 的「能用」、V2 的「用得好」，一路演进到 V3 的「能信」——每条摘要都能溯源回原文段落，
+        把一个辅助阅读工具，做成了分析师敢在研究报告里引用的可审计工具。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 核心特性 -->
+<section id="features">
+  <h2 class="section-title fade-in">核心特性</h2>
+  <p class="section-subtitle fade-in">三类文档，三条链路，各自打磨到稳定</p>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📄</div>
+      <h3>三链路独立设计</h3>
+      <p>年报、研报、纪要结构迥异，各自一条 Prompt 链路独立优化，互不干扰，哪条差就改哪条。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📊</div>
+      <h3>结构化摘要</h3>
+      <p>按固定板块输出，Prompt 强约束防止格式飘逸，每次产出结构一致、可直接复用到研报里。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">📈</div>
+      <h3>变化量视角</h3>
+      <p>不止提炼当期数据，同步给出关键指标的同比方向与幅度，比绝对数字更贴近投资决策。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🔍</div>
+      <h3>研报逻辑自洽检查</h3>
+      <p>抽取「论点 → 依据 → 结论」三元组，在同一维度内查矛盾，帮分析师快速判断研报质量。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">💬</div>
+      <h3>纪要话题热度</h3>
+      <p>按提问聚合，交叉「市场关注度 × 管理层回答详尽度」，识别出被刻意回避的高信息量话题。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">🔗</div>
+      <h3>三栏溯源</h3>
+      <p>左历史、中摘要、右原文，每条摘要都能在原文中高亮定位，结论可验证、可审计。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 工作流程 -->
+<section class="section-dark" id="workflow">
+  <h2 class="section-title fade-in">工作流程</h2>
+  <p class="section-subtitle fade-in">一份文档从上传到可溯源摘要的完整链路</p>
+
+  <div class="workflow-container fade-in">
+    <div class="mermaid">
+flowchart TD
+  U["📄 上传文档<br/>年报 / 研报 / 业绩纪要"] --> T{"🧭 文档类型识别"}
+
+  T -->|"企业年报"| Y["📊 年报链路<br/>正文语义切分 · 财务三表各自独立切分"]
+  T -->|"深度研报"| R["📑 研报链路<br/>先 RAG 入库 → 分 chunk 语义提炼"]
+  T -->|"会议纪要"| J["🎤 纪要链路<br/>时间戳 + 语义区分提问 / 回答"]
+
+  Y --> S["✨ 结构化提炼<br/>按固定板块输出 · Prompt 约束防格式飘逸"]
+  R --> S
+  J --> S
+
+  S --> O["🔗 记录来源坐标<br/>chunk ID + 字符位置"]
+  O --> V["📐 三栏溯源渲染<br/>左：历史 · 中：摘要 · 右：原文高亮"]
+
+  style U fill:#e3f2fd
+  style T fill:#fff3e0
+  style Y fill:#e8f5e9
+  style R fill:#e8f5e9
+  style J fill:#e8f5e9
+  style S fill:#f3e5f5
+  style O fill:#fff9c4
+  style V fill:#fce4ec
+    </div>
+  </div>
+</section>
+
+<!-- 演进路径 -->
+<section id="evolution">
+  <h2 class="section-title fade-in">演进路径</h2>
+  <p class="section-subtitle fade-in">三个版本，分别回答「能用 / 用得好 / 能信」</p>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon">V1</div>
+      <h3>能用 · 跑通基础提炼</h3>
+      <p>三条独立 Prompt 链路上线，年报、研报、纪要各自生成结构化摘要，把单份文档的阅读整理时间从几小时压到 15 分钟以内。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">V2</div>
+      <h3>用得好 · 从摘要到分析</h3>
+      <p>年报加入同比变化量、研报加入结构化逻辑自洽检查、纪要加入话题热度分析，输出不再只是「写了什么」，而是「意味着什么」。</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon">V3</div>
+      <h3>能信 · 可溯源可审计</h3>
+      <p>上线三栏溯源：摘要每条信息都能在右侧原文中高亮定位。分析师从「读快一点」，进阶到「敢在报告里引用结论」。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 项目进展 -->
+<section class="section-dark">
+  <h2 class="section-title fade-in">项目进展</h2>
+
   <div class="op-prose fade-in">
-    <p>📝 这是一个产品的 One Page 详情页占位。后续 Pompeii 会提供对应的 Markdown 文档，再往此处补充完整内容（项目背景、核心特性、工作流程、技术架构、数据成果、Roadmap 等）。</p>
+    <p>产品以 ToB SaaS 形式交付，在广东地区 <strong>50+ 家小型私募基金</strong>持续订阅使用，覆盖月度、季度与年度套餐。</p>
+    <p><strong>效率层面</strong>：三类文档的人工阅读整理，通常需要 1-3 小时；接入助手后，人工复核摘要约 10-15 分钟即可完成，整体提效约 70-80%。</p>
+    <p><strong>价值层面</strong>：V3 溯源功能上线后，分析师对 AI 摘要的信任度明显提升，摘要结论开始被直接引用进内部研究报告——这是产品从「提效工具」转向「可信赖分析工具」的关键信号。</p>
+    <p><strong>后续规划</strong>：单篇文档的阅读提效已基本覆盖；更深层的「跨文档检索 + 多轮追问」需求（例如横跨数十份研报找共同观点），为后续更复杂的投研系统留下了演进空间。</p>
   </div>
 </section>
 
@@ -68,7 +199,7 @@
   <div class="footer-links">
     <a href="portfolio.html#work">返回作品集</a>
   </div>
-  <p class="copyright">投研信息阅读助手 — Pompeii · AI 产品经理</p>
+  <p class="copyright">投研信息助手 — Pompeii · AI 产品经理</p>
 </footer>
 
 <script>
@@ -76,6 +207,10 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'default', flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' } });
 </script>
 
 <script src="lightbox.js"></script>
