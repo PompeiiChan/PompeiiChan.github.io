@@ -17,7 +17,7 @@
       <a href="#background">项目背景</a>
       <a href="#features">核心特性</a>
       <a href="#workflow">工作流程</a>
-      <a href="#evolution">演进路径</a>
+      <a href="#architecture">架构亮点</a>
     </div>
     <a href="portfolio.html#work" class="nav-back">← 返回作品集</a>
   </div>
@@ -28,7 +28,7 @@
   <h1 class="fade-in">投研信息助手</h1>
   <p class="hero-subtitle fade-in">ResearchReading-Assistant</p>
   <p class="hero-description fade-in">
-    面向投研分析师的 AI 阅读提效工具，把年报、深度研报、业绩交流会纪要的阅读整理时间，从 2-3 小时压缩到分钟级。
+    帮小型私募投研分析师，把年报、研报和业绩交流纪要快速加工成可复核投研要点的 AI 阅读助手。
   </p>
 </section>
 
@@ -68,17 +68,17 @@
     <div class="philosophy-item fade-in">
       <h3>现状问题</h3>
       <p>
-        广东地区小型私募的投研分析师，通常 1-3 人就要覆盖多个行业，每天却被三类高密度文档占满：
-        百页级的企业年报、各机构格式各异的深度研报、口语化且信号稀疏的业绩交流会纪要。
-        单份文档往往要读 2-3 小时，信息太多、时间不够用，是每天都真实的痛点。
+        小型私募研究团队人少事多，1-3 名研究员就要覆盖多个行业，每天面对大量年报、券商研报和会议纪要。
+        这些文档信息密度高、格式不统一，人工读完并整理要点常常需要 1-3 小时。只靠人工，容易错过关键变化、
+        管理层表态和研报逻辑漏洞；只看 AI 摘要，又会担心结论无法验证。
       </p>
     </div>
     <div class="philosophy-item fade-in">
       <h3>解决方案</h3>
       <p>
-        不做一个泛泛的聊天机器人，而是为三类文档各自设计一条独立的 Prompt 链路，按场景做结构化提炼。
-        从 V1 的「能用」、V2 的「用得好」，一路演进到 V3 的「能信」——每条摘要都能溯源回原文段落，
-        把一个辅助阅读工具，做成了分析师敢在研究报告里引用的可审计工具。
+        不做简单的「上传即总结」，而是一条从文档上传、结构化解析、AI 加工到原文溯源的完整 pipeline。
+        三类投研文档各自走独立的 Prompt 链路，生成结构化摘要与可验证来源；V3 用三栏布局把 AI 摘要和原文高亮绑定，
+        让分析师能边读结论、边核对证据。
       </p>
     </div>
   </div>
@@ -87,38 +87,38 @@
 <!-- 核心特性 -->
 <section id="features">
   <h2 class="section-title fade-in">核心特性</h2>
-  <p class="section-subtitle fade-in">三类文档，三条链路，各自打磨到稳定</p>
+  <p class="section-subtitle fade-in">三类文档，三条链路，从可读到可审计</p>
 
   <div class="features-grid">
     <div class="feature-card fade-in">
       <div class="feature-icon">📄</div>
-      <h3>三链路独立设计</h3>
-      <p>年报、研报、纪要结构迥异，各自一条 Prompt 链路独立优化，互不干扰，哪条差就改哪条。</p>
+      <h3>三类文档适配</h3>
+      <p>年报、研报、纪要各走一条独立 Prompt 链路，按场景输出稳定结构，互不干扰，可单独迭代。</p>
     </div>
     <div class="feature-card fade-in">
-      <div class="feature-icon">📊</div>
-      <h3>结构化摘要</h3>
-      <p>按固定板块输出，Prompt 强约束防止格式飘逸，每次产出结构一致、可直接复用到研报里。</p>
+      <div class="feature-icon">🧩</div>
+      <h3>结构感知分块</h3>
+      <p>按章节、段落和财务表格切分，年报三张表独立处理，降低数字串表与年份错配的风险。</p>
     </div>
     <div class="feature-card fade-in">
       <div class="feature-icon">📈</div>
-      <h3>变化量视角</h3>
-      <p>不止提炼当期数据，同步给出关键指标的同比方向与幅度，比绝对数字更贴近投资决策。</p>
+      <h3>年报同比变化</h3>
+      <p>不止提炼当期数据，同步给出关键指标的变化方向与幅度，比绝对数字更贴近投资决策。</p>
     </div>
     <div class="feature-card fade-in">
       <div class="feature-icon">🔍</div>
-      <h3>研报逻辑自洽检查</h3>
-      <p>抽取「论点 → 依据 → 结论」三元组，在同一维度内查矛盾，帮分析师快速判断研报质量。</p>
+      <h3>研报逻辑自洽</h3>
+      <p>抽取「论点 → 依据 → 结论」三元组，结构化检查推理是否自洽，帮分析师快速判断研报质量。</p>
     </div>
     <div class="feature-card fade-in">
       <div class="feature-icon">💬</div>
       <h3>纪要话题热度</h3>
-      <p>按提问聚合，交叉「市场关注度 × 管理层回答详尽度」，识别出被刻意回避的高信息量话题。</p>
+      <p>聚合提问与管理层回答，标记市场高度关注却被刻意回避的高信息量问题。</p>
     </div>
     <div class="feature-card fade-in">
       <div class="feature-icon">🔗</div>
       <h3>三栏溯源</h3>
-      <p>左历史、中摘要、右原文，每条摘要都能在原文中高亮定位，结论可验证、可审计。</p>
+      <p>摘要与原文高亮联动，点击即可定位证据段落，让 AI 输出从「可读」变成「可审计、可复核」。</p>
     </div>
   </div>
 </section>
@@ -126,38 +126,63 @@
 <!-- 工作流程 -->
 <section class="section-dark" id="workflow">
   <h2 class="section-title fade-in">工作流程</h2>
-  <p class="section-subtitle fade-in">一份文档从上传到可溯源摘要的完整链路</p>
+  <p class="section-subtitle fade-in">从文档上传到可溯源摘要的完整 pipeline</p>
 
   <div class="workflow-container fade-in">
     <div class="mermaid">
 flowchart TD
-  U["📄 上传文档<br/>年报 / 研报 / 业绩纪要"] --> T{"🧭 文档类型识别"}
+  A["📄 上传文档<br/>年报 / 研报 / 纪要"] --> B["🛡️ 文件识别与安全检查<br/>类型 / 页数 / 加密 / 扫描件"]
+  B --> C["🧩 文档解析<br/>文本 / 版面 / 表格 / OCR"]
+  C --> D["🗂️ 统一 Document JSON<br/>page / block / bbox / paragraph"]
+  D --> E["📑 章节树识别 + 段落编号<br/>heading_path / block_id"]
+  E --> F["✂️ 结构感知 Chunking<br/>按章节 / 段落 / 表格切分"]
+  F --> G{"🧭 三类 AI 阅读加工"}
+  G --> G1["📊 年报<br/>行业 / 经营 / 财务 + 同比变化"]
+  G --> G2["📑 研报<br/>观点 / 目标价 / 推理逻辑检查"]
+  G --> G3["🎤 纪要<br/>管理层表态 / 问题聚合 / 话题热度"]
+  F --> H["🔎 Embedding 入库<br/>chunk_id / block_id / source mapping"]
+  G1 --> I["📐 三栏阅读页<br/>历史列表 / AI 摘要 / 原文高亮"]
+  G2 --> I
+  G3 --> I
+  H -. "规划中" .-> J["💬 可追问知识库<br/>检索 / rerank / 引用回答"]
+  I --> K["✅ 分析师快速复核并引用结论"]
 
-  T -->|"企业年报"| Y["📊 年报链路<br/>正文语义切分 · 财务三表各自独立切分"]
-  T -->|"深度研报"| R["📑 研报链路<br/>先 RAG 入库 → 分 chunk 语义提炼"]
-  T -->|"会议纪要"| J["🎤 纪要链路<br/>时间戳 + 语义区分提问 / 回答"]
-
-  Y --> S["✨ 结构化提炼<br/>按固定板块输出 · Prompt 约束防格式飘逸"]
-  R --> S
-  J --> S
-
-  S --> O["🔗 记录来源坐标<br/>chunk ID + 字符位置"]
-  O --> V["📐 三栏溯源渲染<br/>左：历史 · 中：摘要 · 右：原文高亮"]
-
-  style U fill:#e3f2fd
-  style T fill:#fff3e0
-  style Y fill:#e8f5e9
-  style R fill:#e8f5e9
-  style J fill:#e8f5e9
-  style S fill:#f3e5f5
-  style O fill:#fff9c4
-  style V fill:#fce4ec
+  style A fill:#e3f2fd
+  style B fill:#e8f5e9
+  style C fill:#e8f5e9
+  style D fill:#f3e5f5
+  style E fill:#f3e5f5
+  style F fill:#fff9c4
+  style G fill:#fff3e0
+  style G1 fill:#fce4ec
+  style G2 fill:#fce4ec
+  style G3 fill:#fce4ec
+  style H fill:#e3f2fd
+  style I fill:#c8e6c9
+  style J fill:#ede7f6
+  style K fill:#b3e5fc
     </div>
   </div>
 </section>
 
+<!-- 架构亮点 -->
+<section id="architecture">
+  <h2 class="section-title fade-in">架构亮点</h2>
+
+  <div class="op-prose fade-in">
+    <ul>
+      <li><strong>统一 Document JSON</strong>：承接 PDF、Word、TXT 等不同格式，把页码、段落、表格、bbox、block_id 变成后续摘要、引用与高亮的共同底座。</li>
+      <li><strong>结构感知分块</strong>：不按 token 粗切，而是按章节、段落和财务表格结构切，年报三张表独立处理，降低数字串表与年份错配风险。</li>
+      <li><strong>三条独立 Prompt 链路</strong>：而非一个通用 Prompt，保证年报、研报、纪要各自输出稳定，且便于单独迭代。</li>
+      <li><strong>研报逻辑三元组</strong>：把「观点是否自洽」从模型的自由判断，变成可控的结构化字段，降低误报与输出漂移。</li>
+      <li><strong>溯源坐标映射</strong>：摘要生成时即记录 source chunk 坐标，前端把摘要条目映射到原文段落或 PDF 坐标，支持一键核验。</li>
+      <li><strong>可追问知识库（规划中）</strong>：基于 chunk embedding、heading_path 检索、rerank 与引用回答，目标是从「读快一点」升级为「围绕文档找答案」。</li>
+    </ul>
+  </div>
+</section>
+
 <!-- 演进路径 -->
-<section id="evolution">
+<section class="section-dark" id="evolution">
   <h2 class="section-title fade-in">演进路径</h2>
   <p class="section-subtitle fade-in">三个版本，分别回答「能用 / 用得好 / 能信」</p>
 
@@ -175,20 +200,19 @@ flowchart TD
     <div class="feature-card fade-in">
       <div class="feature-icon">V3</div>
       <h3>能信 · 可溯源可审计</h3>
-      <p>上线三栏溯源：摘要每条信息都能在右侧原文中高亮定位。分析师从「读快一点」，进阶到「敢在报告里引用结论」。</p>
+      <p>上线三栏溯源：摘要每条信息都能在右侧原文中高亮定位，解决金融场景里「AI 说的是否可信」的核心顾虑。</p>
     </div>
   </div>
 </section>
 
 <!-- 项目进展 -->
-<section class="section-dark">
+<section>
   <h2 class="section-title fade-in">项目进展</h2>
 
   <div class="op-prose fade-in">
-    <p>产品以 ToB SaaS 形式交付，在广东地区 <strong>50+ 家小型私募基金</strong>持续订阅使用，覆盖月度、季度与年度套餐。</p>
-    <p><strong>效率层面</strong>：三类文档的人工阅读整理，通常需要 1-3 小时；接入助手后，人工复核摘要约 10-15 分钟即可完成，整体提效约 70-80%。</p>
-    <p><strong>价值层面</strong>：V3 溯源功能上线后，分析师对 AI 摘要的信任度明显提升，摘要结论开始被直接引用进内部研究报告——这是产品从「提效工具」转向「可信赖分析工具」的关键信号。</p>
-    <p><strong>后续规划</strong>：单篇文档的阅读提效已基本覆盖；更深层的「跨文档检索 + 多轮追问」需求（例如横跨数十份研报找共同观点），为后续更复杂的投研系统留下了演进空间。</p>
+    <p>产品以 ToB SaaS 形式交付，服务广东地区 <strong>50+ 家小型私募基金</strong>，已跑通三类核心投研文档的完整 AI 阅读链路，并经历 V1 到 V3 的产品迭代。</p>
+    <p><strong>效率方向</strong>：人工阅读整理通常需要 1-3 小时，AI 提炼后人工复核约 10-15 分钟；V3 溯源上线后，分析师开始把摘要结论直接引用进内部研究报告。</p>
+    <p><strong>下一步</strong>：补齐可追问知识库（chunk embedding + rerank + 引用回答）、建立投研评测集（财务指标准确率 / 逻辑检查误报率 / 纪要 Q&A 识别）、支持多文档横向分析（跨季度纪要对比、同行业研报聚合），并完善按客户隔离的文档空间与审计回放。</p>
   </div>
 </section>
 
