@@ -421,6 +421,32 @@ section{
   background:transparent;
 }
 
+/* 多端截图：竖屏端独占一行、居中且收窄 */
+.cs-portrait{
+  max-width:340px;
+  margin:0 auto 1.5rem;
+}
+.cs-portrait .mac-viewport{
+  height:560px;
+}
+/* 多端截图：宽屏端两列并排 */
+.cs-row2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.25rem;
+  max-width:980px;
+  margin:0 auto;
+}
+.cs-row2 .mac-window{
+  max-width:none;
+}
+.cs-cap{
+  text-align:center;
+  margin-top:10px;
+  font-size:0.85rem;
+  color:var(--text-secondary);
+}
+
 /* Footer */
 footer{
   background:var(--bg-secondary);
@@ -454,4 +480,6 @@ footer{
   .nav-links{display:none;}
   section{padding:70px 22px;}
   .mac-viewport{height:420px;}
+  .cs-row2{grid-template-columns:1fr;}
+  .cs-portrait{max-width:300px;}
 }
